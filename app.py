@@ -19,9 +19,18 @@ def hello():
     posts = ["첫번째 글", "두번째 글", "세번째 글"]
     return render_template("index.html", name=name, posts=posts)
 
-@app.route("/about")
-def about():
-    return "소개 페이지"
+@app.route("/test")
+def test():
+    new_post = Post(title='첫번째 글', content='내용입니다', date='2026-05-18')
+    db.session.add(new_post)
+    db.session.commit()
+    return "데이터 추가 완료!"
+
+# 조회
+@app.route("/posts")
+def posts():
+    posts = Post.query.all()
+    return render_template("index.html", posts=posts)
 
 @app.route("/user/<username>")
 def user(username):

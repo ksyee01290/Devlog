@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>게시글 목록</h1>
+<h1>게시글 목록</h1>
     {% for post in posts %}
         <div class="card mb-3">
             <div class="card-body">
-                <p class="card-text">{{ post }}</p>
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text">{{ post.date }}</p>
             </div>
         </div>
     {% endfor %}
