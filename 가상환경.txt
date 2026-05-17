@@ -11,7 +11,9 @@ python -m venv venv (가상환경 셋팅)
 python -m venv venv --without-pip (인터넷 연결 문제 있으면 대체 pip 없이 우선설치)
 python -m ensurepip (pip가 가상환경에 없을때)
 
-venv\Scripts\activate (가상환경 활성화)
+venv\Scripts\Activate.ps1 (가상환경 활성화)
+
+python -m pip show ... (가상환경 안에 라이브러리 확인할때)
 
 pip install flask (플라스크 설치)
 pip install python-dotenv (.env 파일에 있는 환경변수를 py에서 읽어올수있게해주는 라이브러리)

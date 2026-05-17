@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -16,4 +16,12 @@ def about():
 def user(username):
     return render_template("index.html", name=username, posts=[])
 
-app.run()
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        return f"{username}님 로그인 성공"
+    return render_template("login.html")
+
+app.run(debug=True)

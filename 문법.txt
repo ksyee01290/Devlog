@@ -1,0 +1,11 @@
+{{ }}변수 출력
+{% if %}조건문 {%endif%}(꼭써줘야함)
+{% for %}반복문 {%endfor%}(꼭써줘야함)
+{# #}주석
+
+{% extends "base.html"%} (base 상속받기)
+{% block content %} (자식페이지가 내용을 채움)
+{% endblock %} (마지막에 꼭닫아줘야함)
+
+url_for (Flask가 알아서 올바른 경로를 찾아줌)
+예시 : {{ url_for('static', filename='style.css') }}

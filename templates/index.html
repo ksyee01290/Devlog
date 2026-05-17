@@ -3,12 +3,10 @@
 {% block content %}
     <h1>게시글 목록</h1>
     {% for post in posts %}
-        <p>{{ post }}</p>
+        <div class="card mb-3">
+            <div class="card-body">
+                <p class="card-text">{{ post }}</p>
+            </div>
+        </div>
     {% endfor %}
-
-    {% if name == "김철수" %}
-        <p>관리자입니다!</p>
-    {% else %}
-        <p>일반 사용자입니다!</p>
-    {% endif %}
 {% endblock %}
