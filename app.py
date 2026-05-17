@@ -1,6 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-    app.run(devug=True)
+@app.route("/")
+def hello():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return "소개 페이지"
+
+app.run()
