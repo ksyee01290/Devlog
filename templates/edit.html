@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>글수정</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label>제목</label>
+            <input type="text" name="title" class="form-control" value="{{ post.title }}">
+        </div>
+        <div class="mb-3">
+            <label>내용</label>
+            <textarea name="content" class="form-control" rows="5">{{ post.content }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">수정완료</button>
+    </form>
+{% endblock %}
