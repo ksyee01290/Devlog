@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = "123123"
 
 @app.route("/")
 def hello():
@@ -21,7 +22,12 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        return f"{username}님 로그인 성공"
+        flash(f"{username}님 로그인 성공")
+        return redirect(url_for("hello"))
     return render_template("login.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
 
 app.run(debug=True)
