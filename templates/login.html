@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>로그인</h2>
-    <form method="POST">
-        <div class="mb-3">
-            <label>아이디</label>
-            <input type="text" name="username" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>비밀번호</label>
-            <input type="password" name="password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
+<h2>로그인</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>아이디</label>
+        <input type="text" name="username" class="form-control" onkeydown="if(event.keyCode === 32) return false;"
+            oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '')"
+            oncompositionend="this.value = this.value.replace(/[^A-Za-z0-9]/g, '')">
+    </div>
+    <div class="mb-3">
+        <label>비밀번호</label>
+        <input type="password" name="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">로그인</button>
+</form>
 {% endblock %}
