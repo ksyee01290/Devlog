@@ -1,0 +1,10 @@
+pip freeze > requirements.txt
+가상환경에 설치된 패키지 목록 requirements.txt 파일로 저장하는 명령어
+
+cat requirements.txt
+패키지 확인
+
+Procfile 파일만들고 입력
+web: gunicorn app:app
+
+pip install gunicorn 설치
