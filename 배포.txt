@@ -8,3 +8,6 @@ Procfile 파일만들고 입력
 web: gunicorn app:app
 
 pip install gunicorn 설치
+
+git 에 올려야 render가 코드를 가져옴
+
