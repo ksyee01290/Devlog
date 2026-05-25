@@ -82,7 +82,7 @@ def delete(id):
     flash("글이 삭제되었습니다!")
     return redirect(url_for("hello"))
 
-# user정보
+# user정보 회원가입
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
